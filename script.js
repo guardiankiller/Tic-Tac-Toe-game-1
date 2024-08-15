@@ -17,9 +17,11 @@ cells.forEach((cell, index) =>
     cell.addEventListener("click", () => handleCellClick(index)));
 
 function handleCellClick(index) {
+    console.log(isGameFinished());
+    
     if (isGameFinished() || cells[index].innerHTML !== "") {
         return;
-    }
+    } 
     
     gameStatus = EGameStatus.IN_PROGRESS;
     cells[index].innerHTML = currentPlayer;
@@ -94,5 +96,5 @@ function updateGameMessage() {
 }
 
 function isGameFinished() {
-    return gameStatus == EGameStatus.FINISHED_WITH_TIE || gameStatus == EGameStatus.FINISHED_WITH_TIE;
+    return gameStatus == EGameStatus.FINISHED_WITH_WINNER || gameStatus == EGameStatus.FINISHED_WITH_TIE;
 }
