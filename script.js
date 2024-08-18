@@ -11,6 +11,7 @@ const cells = document.querySelectorAll(".cell");
 const resetButton = document.getElementById("resetButton");
 const gameMessage = document.querySelector(".game-message");
 
+reset();
 updateGameMessage();
 resetButton.addEventListener("click", reset);
 cells.forEach((cell, index) =>
